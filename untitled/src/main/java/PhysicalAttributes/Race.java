@@ -24,7 +24,7 @@ public enum Race {
                     max = 90;
                     break;
                 case ELF:
-                    max = Integer.MAX_VALUE;
+                    max = 750;
                     break;
                 case HALF_ELF:
                     max = 210;
@@ -41,7 +41,7 @@ public enum Race {
             }
             int min = 18;
 
-            return new Random().nextInt((max - min + 1) + min);
+            return new Random().nextInt(max - min + 1) + min;
         } else {
             switch (race) {
                 case HUMAN:
@@ -65,118 +65,133 @@ public enum Race {
             }
             int min = 18;
 
-            return new Random().nextInt((max - min + 1) + min);
+            return new Random().nextInt(max - min + 1) + min;
         }
     }
 
-    public double getRandomHeight(Race race, Gender gender) {
+    public int getRandomHeight(Race race, Gender gender) {
         int max = 0;
+        int min = 0;
         if (gender == Gender.Female) {
             switch (race) {
                 case HUMAN:
-                    max = 90;
+                    max = 76;
+                    min = 50;
                     break;
                 case ELF:
-                    max = Integer.MAX_VALUE;
+                    max = 74;
+                    min = 48;
                     break;
                 case HALF_ELF:
-                    max = 210;
+                    max = 75;
+                    min = 49;
                     break;
                 case DWARF:
-                    max = 380;
+                    max = 50;
+                    min = 42;
                     break;
                 case HALFLING:
-                    max = 280;
+                    max = 25;
+                    min = 17;
                     break;
                 case GNOME:
-                    max = 490;
+                    max = 46;
+                    min = 34;
                     break;
             }
-            int min = 18;
 
-            Random random = new Random();
-            return min + (max - min) * random.nextDouble();
         } else {
             switch (race) {
                 case HUMAN:
-                    max = 90;
+                    max = 78;
+                    min = 52;
                     break;
                 case ELF:
-                    max = Integer.MAX_VALUE;
+                    max = 76;
+                    min = 50;
                     break;
                 case HALF_ELF:
-                    max = 210;
+                    max = 77;
+                    min = 51;
                     break;
                 case DWARF:
-                    max = 380;
+                    max = 52;
+                    min = 44;
                     break;
                 case HALFLING:
-                    max = 280;
+                    max = 27;
+                    min = 19;
                     break;
                 case GNOME:
-                    max = 490;
+                    max = 48;
+                    min = 36;
                     break;
             }
-            int min = 18;
 
-            Random random = new Random();
-            return min + (max - min) * random.nextDouble();
         }
+        return new Random().nextInt(max - min) + min;
     }
 
     public double getRandomWeight(Race race, Gender gender) {
         int max = 0;
+        int min = 0;
         if (gender == Gender.Female) {
             switch (race) {
                 case HUMAN:
-                    max = 90;
+                    min = 110;
+                    max = 220;
                     break;
                 case ELF:
-                    max = Integer.MAX_VALUE;
+                    min = 100;
+                    max = 200;
                     break;
                 case HALF_ELF:
+                    min = 105;
                     max = 210;
                     break;
                 case DWARF:
-                    max = 380;
+                    min = 115;
+                    max = 230;
                     break;
                 case HALFLING:
-                    max = 280;
+                    min = 35;
+                    max = 50;
                     break;
                 case GNOME:
-                    max = 490;
+                    min = 30;
+                    max = 45;
                     break;
             }
-            int min = 18;
 
-            Random random = new Random();
-            return min + (max - min) * random.nextDouble();
         } else {
             switch (race) {
                 case HUMAN:
-                    max = 90;
+                    min = 120;
+                    max = 240;
                     break;
                 case ELF:
-                    max = Integer.MAX_VALUE;
+                    min = 110;
+                    max = 220;
                     break;
                 case HALF_ELF:
-                    max = 210;
+                    min = 115;
+                    max = 230;
                     break;
                 case DWARF:
-                    max = 380;
+                    min = 125;
+                    max = 250;
                     break;
                 case HALFLING:
-                    max = 280;
+                    min = 40;
+                    max = 60;
                     break;
                 case GNOME:
-                    max = 490;
+                    min = 35;
+                    max = 50;
                     break;
             }
-            int min = 18;
-
-            Random random = new Random();
-            return min + (max - min) * random.nextDouble();
         }
+        return new Random().nextInt(max - min) + min;
     }
 }
 
